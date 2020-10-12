@@ -8,11 +8,10 @@ path.moveTo(start);
 // Note the plus operator on Point objects.
 // PaperScript does that for us, and much more!
 path.lineTo(start + [ 100, -50 ]);
-var myCircle = new Path.Circle(new Point(100, 70), 50);
-myCircle.fillColor = 'yellow';
 
-var circle2 = new Path.Circle(new Point(200, 70), 50);
-circle2.fillColor = 'orange';
-
-var circle3 = new Path.Circle(new Point(300, 70), 50);
-circle3.fillColor = 'red';
+function onKeyDown(event) {
+	var maxPoint = new Point(view.size.width, view.size.height);
+	var randomPoint = Point.random();
+	var point = maxPoint * randomPoint;
+	new Path.Circle(point, 10).fillColor = 'yellow';
+}
